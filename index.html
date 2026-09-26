@@ -1,264 +1,273 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Milo — Identification du chien d'assistance</title>
+  <title>Milo — Chien d'assistance</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: #f3f6fa;
-  color: #13233a;
-}
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f3f6fa;
+      color: #13233a;
+    }
 
-.header {
-  background: linear-gradient(135deg, #063768, #07549a);
-  color: white;
-  padding: 38px 20px 55px;
-  text-align: center;
-}
+    .header {
+      background: linear-gradient(180deg, #07457d 0%, #0860a5 100%);
+      color: white;
+      text-align: center;
+      padding: 45px 20px 85px;
+    }
 
-.header .paw {
-  font-size: 44px;
-}
+    .paw {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-.header h1 {
-  margin: 8px 0 4px;
-  font-size: 28px;
-}
+    .header h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 800;
+    }
 
-.header p {
-  margin: 0;
-  opacity: .9;
-  font-size: 15px;
-}
+    .header p {
+      margin: 8px 0 0;
+      font-size: 20px;
+      opacity: 0.95;
+    }
 
-.card {
-  max-width: 520px;
-  margin: -30px auto 25px;
-  background: white;
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.12);
-}
+    .card {
+      max-width: 650px;
+      width: calc(100% - 30px);
+      margin: -55px auto 35px;
+      background: white;
+      border-radius: 28px;
+      padding: 30px 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+    }
 
-.status {
-  background: #e8f7ee;
-  color: #14733c;
-  border: 1px solid #b9e6c9;
-  padding: 13px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 22px;
-}
+    .status {
+      background: #eaf8ef;
+      border: 1px solid #a9dfbc;
+      color: #14833b;
+      border-radius: 18px;
+      padding: 17px 12px;
+      text-align: center;
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
 
-.dog-photo {
-  width: 170px;
-  height: 170px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  background: #e7edf4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 70px;
-  border: 5px solid #edf2f7;
-}
+    .dog-photo {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #edf2f7;
+      background: #e7edf4;
+    }
 
-.name {
-  text-align: center;
-  font-size: 35px;
-  font-weight: 800;
-  color: #073d73;
-  margin-bottom: 4px;
-}
+    .dog-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.id {
-  text-align: center;
-  color: #66768a;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
+    .name {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 900;
+      color: #07518f;
+      margin-bottom: 5px;
+    }
 
-.section {
-  border-top: 1px solid #e1e7ee;
-  padding-top: 18px;
-  margin-top: 18px;
-}
+    .id {
+      text-align: center;
+      color: #66768a;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
 
-.section h2 {
-  font-size: 17px;
-  color: #073d73;
-  margin: 0 0 15px;
-}
+    .divider {
+      height: 1px;
+      background: #dce3ea;
+      margin: 20px 0 25px;
+    }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 9px 0;
-}
+    .section h2 {
+      color: #07518f;
+      margin: 0 0 20px;
+      font-size: 24px;
+    }
 
-.label {
-  color: #748397;
-  font-size: 14px;
-}
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      align-items: flex-start;
+    }
 
-.value {
-  font-weight: 650;
-  text-align: right;
-  font-size: 14px;
-}
+    .label {
+      color: #718096;
+      font-size: 18px;
+    }
 
-.training {
-  background: #f0f6fc;
-  border-left: 4px solid #07549a;
-  padding: 16px;
-  border-radius: 10px;
-  line-height: 1.5;
-  font-size: 14px;
-}
+    .value {
+      color: #15243a;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: right;
+    }
 
-.notice {
-  margin-top: 20px;
-  background: #fff8e8;
-  border: 1px solid #f0d996;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 12px;
-  line-height: 1.45;
-  color: #67582f;
-}
+    .notice {
+      margin-top: 28px;
+      background: #edf5fc;
+      border-left: 5px solid #0860a5;
+      border-radius: 10px;
+      padding: 18px;
+      line-height: 1.5;
+      color: #33475b;
+    }
 
-.footer {
-  text-align: center;
-  color: #7c8998;
-  font-size: 12px;
-  padding: 5px 20px 35px;
-}
+    .notice strong {
+      color: #07518f;
+    }
 
-.maple {
-  color: #d71920;
-}
+    .footer {
+      text-align: center;
+      color: #7b8794;
+      font-size: 14px;
+      margin-top: 28px;
+      line-height: 1.5;
+    }
 
-@media(max-width:550px) {
-  .card {
-    margin-left: 14px;
-    margin-right: 14px;
-  }
-}
-</style>
+    @media (max-width: 500px) {
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 25px 22px;
+      }
+
+      .dog-photo {
+        width: 175px;
+        height: 175px;
+      }
+
+      .name {
+        font-size: 38px;
+      }
+
+      .row {
+        gap: 12px;
+      }
+
+      .label,
+      .value {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="header">
-  <div class="paw">🐾</div>
-  <h1>Chien d'assistance</h1>
-  <p>Service Dog Identification</p>
-</div>
-
-<div class="card">
-
-  <div class="status">
-    ✓ IDENTITÉ ENREGISTRÉE
+  <div class="header">
+    <div class="paw">🐾</div>
+    <h1>Chien d'assistance</h1>
+    <p>Service Dog Identification</p>
   </div>
 
-  <div class="dog-photo">🐕‍🦺</div>
+  <main class="card">
 
-  <div class="name">MILO</div>
-  <div class="id">Identification nº 6724567</div>
-
-  <div class="section">
-    <h2>Identification</h2>
-
-    <div class="row">
-      <div class="label">Nom</div>
-      <div class="value">Milo</div>
+    <div class="status">
+      ✓ IDENTITÉ ENREGISTRÉE
     </div>
 
-    <div class="row">
-      <div class="label">Espèce</div>
-      <div class="value">Canin</div>
+    <div class="dog-photo">
+      <img src="IMG_4276.jpeg" alt="Photo de Milo">
     </div>
 
-    <div class="row">
-      <div class="label">Race</div>
-      <div class="value">Labrador Retriever</div>
+    <div class="name">MILO</div>
+    <div class="id">Identification n° 6724567</div>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <h2>Identification</h2>
+
+      <div class="row">
+        <div class="label">Nom</div>
+        <div class="value">Milo</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Espèce</div>
+        <div class="value">Canin</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Race</div>
+        <div class="value">Labrador Retriever</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Couleur</div>
+        <div class="value">Noir</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Date de naissance</div>
+        <div class="value">18 août 2020</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <h2>Responsable</h2>
+
+      <div class="row">
+        <div class="label">Propriétaire / Handler</div>
+        <div class="value">Alexandre St-Jean Dompierre</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Province</div>
+        <div class="value">Québec, Canada</div>
+      </div>
+    </section>
+
+    <div class="notice">
+      <strong>Chien d'assistance / Service Dog</strong><br><br>
+
+      Milo est présenté comme un chien d'assistance. Cette page fournit
+      les renseignements d'identification associés à Milo et à son responsable.
+      Elle ne constitue pas, à elle seule, une certification gouvernementale
+      ou une preuve officielle de droits d'accès.
     </div>
 
-    <div class="row">
-      <div class="label">Couleur</div>
-      <div class="value">Noir</div>
+    <div class="footer">
+      Identification de Milo<br>
+      Québec, Canada
     </div>
 
-    <div class="row">
-      <div class="label">Date de naissance</div>
-      <div class="value">18 août 2020</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Propriétaire / Handler</h2>
-
-    <div class="row">
-      <div class="label">Nom</div>
-      <div class="value">Alexandre St-Jean Dompierre</div>
-    </div>
-
-    <div class="row">
-      <div class="label">Province</div>
-      <div class="value">Québec, Canada</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Statut d'entraînement</h2>
-
-    <div class="training">
-      <strong>🐾 Chien d'assistance entraîné</strong><br><br>
-
-      Milo est identifié comme chien d'assistance et a reçu un
-      entraînement visant à accomplir des tâches d'assistance et à
-      maintenir un comportement approprié dans les lieux publics.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Consignes en public</h2>
-
-    <div class="row">
-      <div class="label">🐕 Interaction</div>
-      <div class="value">Ne pas distraire</div>
-    </div>
-
-    <div class="row">
-      <div class="label">✋ Contact</div>
-      <div class="value">Ne pas toucher sans permission</div>
-    </div>
-  </div>
-
-  <div class="notice">
-    <strong>Information importante :</strong><br>
-    Cette page constitue une fiche d'identification privée.
-    Elle ne constitue pas une certification, une licence ou une
-    attestation émise par le gouvernement du Québec ou du Canada.
-  </div>
-
-</div>
-
-<div class="footer">
-  <span class="maple">🍁</span> Québec, Canada<br><br>
-  Fiche d'identification — Milo nº 6724567
-</div>
+  </main>
 
 </body>
 </html>
